@@ -30,7 +30,7 @@ function login() {
 
     // Call API
     $.ajax({
-        url: 'http://localhost:8080/api/v1/login',
+        url: 'https://simplecode-user-management.herokuapp.com/api/v1/login',
         type: 'GET',
         contentType: "application/json",
         dataType: 'json', // datatype return
