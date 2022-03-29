@@ -27,7 +27,7 @@ var departmentNameFilter = "";
 function initRolesList() {
   $("#department-select").empty();
   $.ajax({
-    url: "http://simplecode-user-management.herokuapp.com/api/v1/accounts/roles",
+    url: "https://simplecode-user-management.herokuapp.com/api/v1/accounts/roles",
     type: "GET",
     contentType: "application/json",
     dataType: "json", // datatype return
@@ -79,7 +79,7 @@ function initRolesList() {
 function initDepartmentList() {
   $("#department-select").empty();
   $.ajax({
-    url: "http://simplecode-user-management.herokuapp.com/api/v1/departments",
+    url: "https://simplecode-user-management.herokuapp.com/api/v1/departments",
     type: "GET",
     contentType: "application/json",
     dataType: "json", // datatype return
@@ -134,7 +134,7 @@ function initDepartmentList() {
 }
 
 function getListAccounts() {
-  var url = "http://simplecode-user-management.herokuapp.com/api/v1/accounts";
+  var url = "https://simplecode-user-management.herokuapp.com/api/v1/accounts";
 
   url += "?page=" + accCurrentPage + "&size=" + accSize;
 
@@ -531,7 +531,7 @@ function addAccount() {
   // validate unique name
   $.ajax({
     url:
-      "http://simplecode-user-management.herokuapp.com/api/v1/accounts/userName/" + userName + "/exists",
+      "https://simplecode-user-management.herokuapp.com/api/v1/accounts/userName/" + userName + "/exists",
     type: "GET",
     contentType: "application/json",
     dataType: "json", // datatype return
@@ -561,7 +561,7 @@ function addAccount() {
         };
 
         $.ajax({
-          url: "http://simplecode-user-management.herokuapp.com/api/v1/accounts/admin/post",
+          url: "https://simplecode-user-management.herokuapp.com/api/v1/accounts/admin/post",
           type: "POST",
           data: JSON.stringify(account), // body
           contentType: "application/json", // type of body (json, xml, text)
@@ -620,7 +620,7 @@ function openAccountUpdateModal(id) {
   } else {
     // call API from server
     $.ajax({
-      url: "http://simplecode-user-management.herokuapp.com/api/v1/accounts/" + id,
+      url: "https://simplecode-user-management.herokuapp.com/api/v1/accounts/" + id,
       type: "GET",
       contentType: "application/json",
       dataType: "json", // datatype return
@@ -694,7 +694,7 @@ function updateAccount() {
     departmentId: depId,
   };
   $.ajax({
-    url: "http://simplecode-user-management.herokuapp.com/api/v1/accounts/admin/put/" + id,
+    url: "https://simplecode-user-management.herokuapp.com/api/v1/accounts/admin/put/" + id,
     type: "PUT",
     data: JSON.stringify(account), // body
     contentType: "application/json", // type of body (json, xml, text)
@@ -746,7 +746,7 @@ function deleteAccount(id) {
   // TODO validate
 
   $.ajax({
-    url: "http://simplecode-user-management.herokuapp.com/api/v1/accounts/admin/delete/" + id,
+    url: "https://simplecode-user-management.herokuapp.com/api/v1/accounts/admin/delete/" + id,
     type: "DELETE",
     beforeSend: function (xhr) {
       xhr.setRequestHeader(
@@ -840,7 +840,7 @@ function deleteAllAccount() {
       };
       // call API
       $.ajax({
-        url: "http://simplecode-user-management.herokuapp.com/api/v1/accounts/admin/delete",
+        url: "https://simplecode-user-management.herokuapp.com/api/v1/accounts/admin/delete",
         type: "DELETE",
         data: JSON.stringify(accountIds),
         contentType: "application/json",

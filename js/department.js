@@ -73,7 +73,7 @@ var typeFilter = "";
 function initTypesList() {
   $("#type-select").empty();
   $.ajax({
-    url: "http://simplecode-user-management.herokuapp.com/api/v1/departments/types",
+    url: "https://simplecode-user-management.herokuapp.com/api/v1/departments/types",
     type: "GET",
     contentType: "application/json",
     dataType: "json", // datatype return
@@ -125,7 +125,7 @@ function initTypesList() {
 }
 
 function getListDepartments() {
-  var url = "http://simplecode-user-management.herokuapp.com/api/v1/departments";
+  var url = "https://simplecode-user-management.herokuapp.com/api/v1/departments";
 
   url += "?page=" + currentPage + "&size=" + size;
 
@@ -474,7 +474,7 @@ function addDepartment() {
 
   // validate unique name
   $.ajax({
-    url: "http://simplecode-user-management.herokuapp.com/api/v1/departments/name/" + name + "/exists",
+    url: "https://simplecode-user-management.herokuapp.com/api/v1/departments/name/" + name + "/exists",
     type: "GET",
     contentType: "application/json",
     dataType: "json", // datatype return
@@ -504,7 +504,7 @@ function addDepartment() {
         };
 
         $.ajax({
-          url: "http://simplecode-user-management.herokuapp.com/api/v1/departments/admin/post",
+          url: "https://simplecode-user-management.herokuapp.com/api/v1/departments/admin/post",
           type: "POST",
           data: JSON.stringify(department), // body
           contentType: "application/json", // type of body (json, xml, text)
@@ -560,7 +560,7 @@ function openUpdateModal(id) {
   } else {
     // call API from server
     $.ajax({
-      url: "http://simplecode-user-management.herokuapp.com/api/v1/departments/" + id,
+      url: "https://simplecode-user-management.herokuapp.com/api/v1/departments/" + id,
       type: "GET",
       contentType: "application/json",
       dataType: "json", // datatype return
@@ -635,7 +635,7 @@ function updateDepartment() {
     type: type,
   };
   $.ajax({
-    url: "http://simplecode-user-management.herokuapp.com/api/v1/departments/admin/put/" + id,
+    url: "https://simplecode-user-management.herokuapp.com/api/v1/departments/admin/put/" + id,
     type: "PUT",
     data: JSON.stringify(department), // body
     contentType: "application/json", // type of body (json, xml, text)
@@ -688,7 +688,7 @@ function deleteDepartment(id) {
   // TODO validate
 
   $.ajax({
-    url: "http://simplecode-user-management.herokuapp.com/api/v1/departments/admin/delete/" + id,
+    url: "https://simplecode-user-management.herokuapp.com/api/v1/departments/admin/delete/" + id,
     type: "DELETE",
     beforeSend: function (xhr) {
       xhr.setRequestHeader(
@@ -782,7 +782,7 @@ function deleteAllDepartment() {
       };
       // call API
       $.ajax({
-        url: "http://simplecode-user-management.herokuapp.com/api/v1/departments/admin/delete",
+        url: "https://simplecode-user-management.herokuapp.com/api/v1/departments/admin/delete",
         type: "DELETE",
         data: JSON.stringify(departmentIds),
         contentType: "application/json",
@@ -852,7 +852,7 @@ function fillAccountForAddDepartment() {
 function getListAccountsForAddDepartment() {
   // call API from server
   $.ajax({
-    url: "http://simplecode-user-management.herokuapp.com/api/v1/accounts",
+    url: "https://simplecode-user-management.herokuapp.com/api/v1/accounts",
     type: "GET",
     contentType: "application/json",
     dataType: "json", // datatype return

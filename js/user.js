@@ -19,7 +19,7 @@ function clickNavViewUser() {
 function fillUserInfor() {
   userId = storage.getItem("ID");
   $.ajax({
-    url: "http://localhost:8080/api/v1/accounts/" + userId,
+    url: "https://simplecode-user-management.herokuapp.com/api/v1/accounts/" + userId,
     type: "GET",
     contentType: "application/json",
     dataType: "json", // datatype return
@@ -56,7 +56,7 @@ function openUserUpdateModal() {
   userId = storage.getItem("ID");
   // call API from server
   $.ajax({
-    url: "http://simplecode-user-management.herokuapp.com/api/v1/accounts/" + userId,
+    url: "https://simplecode-user-management.herokuapp.com/api/v1/accounts/" + userId,
     type: "GET",
     contentType: "application/json",
     dataType: "json", // datatype return
@@ -189,7 +189,7 @@ function updateUser() {
           newPass: pass
         };
         $.ajax({
-          url: "http://simplecode-user-management.herokuapp.com/api/v1/accounts/user/" + id,
+          url: "https://simplecode-user-management.herokuapp.com/api/v1/accounts/user/" + id,
           type: "PUT",
           data: JSON.stringify(user), // body
           contentType: "application/json", // type of body (json, xml, text)
@@ -238,7 +238,7 @@ function updateUser() {
       newPass: pass
     };
     $.ajax({
-      url: "http://simplecode-user-management.herokuapp.com/api/v1/accounts/user/" + id,
+      url: "https://simplecode-user-management.herokuapp.com/api/v1/accounts/user/" + id,
       type: "PUT",
       data: JSON.stringify(user), // body
       contentType: "application/json", // type of body (json, xml, text)
